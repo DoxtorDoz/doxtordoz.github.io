@@ -1,0 +1,127 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-image: url(/wllppr.jpeg);
+    margin: 0px;
+    height: 100vh;
+    /*font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+    font-family: Ubuntu, monospace;
+}
+#top-bar{
+    background-color: chartreuse;
+    width: 100%;
+    height: 25px;
+    background: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menu-btn, #so-title, #clock, .window-title{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: aliceblue;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(243, 171, 171, 0);
+}
+
+
+
+#left-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 10px 10px 0;
+    background-color: rgb(224, 201, 245, 0.5);
+    margin: 10px 0 10px 0;
+    z-index: 10000;
+}
+
+#window-container{
+    flex: 1;
+    width: 100%;
+    position: relative;
+    
+}
+
+.window {
+    min-width: 480px;
+    min-height: 300px;
+    float: left;
+    background-color: palegreen;
+    width: 600px;
+    height: 480px;
+    position: absolute;
+    resize: both;
+    overflow: hidden;
+}
+
+.window-bar{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    
+    width: 100%;
+    background-color: brown;
+    
+}
+
+.window-title{
+    text-transform: capitalize;
+    text-align: center;
+    width: 80%;
+}
+
+#window-bar-buttons{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    background-color: aqua;
+    width: 30%;
+}
+
+.window-content {
+    height: 100%;
+    background-color: rgb(255, 127, 80);
+    /*padding: 10px;*/
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.bar-btn{
+    background-color: rgb(9, 49, 49);
+    color: aliceblue;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.bar-btn:hover{
+    background-color:  rgb(17, 65, 65);
+}
+
+.w-button{
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    margin: 5px;
+}
+
+@media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .contenedor-barra-vertical, .contenedor-ventana {
+    width: 100%;
+    }
+}
