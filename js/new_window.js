@@ -1,10 +1,10 @@
 let zIndexCounter = 1;
+let move = 0;
 
 export function newWindow(vista, contenido, nombre, menuButton){
     /**
      * CREACION DE LA VENTANA
      */
-
     const window = document.createElement('div');
     window.setAttribute('id',`${vista}`);
     window.setAttribute('class','window');
@@ -56,8 +56,15 @@ export function newWindow(vista, contenido, nombre, menuButton){
     /**
      * MONTAJE FINAL
      */
+
+
     window.appendChild(windowBar);
     window.appendChild(windowContent);
+    traerAlFrente();
+
+    move +=25;
+    window.style.top = `${move}px`; 
+    window.style.left = `${move}px`; 
 
     /**
      * FUNCIONES VENTANA
@@ -91,6 +98,11 @@ export function newWindow(vista, contenido, nombre, menuButton){
     closeButton.addEventListener("click", ()=> {
         window.remove();
         document.getElementById(menuButton).setAttribute("active","false");
+        move -=25;
+    });
+
+    document.getElementById(menuButton).addEventListener("click",() =>{
+        traerAlFrente();
     });
 
     //DRAGABLE
