@@ -16,6 +16,8 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 10000000;
 }
 
 #menu-btn, #so-title, #clock, .window-title{
@@ -44,14 +46,14 @@ body{
     border-radius: 0 10px 10px 0;
     background-color: rgb(224, 201, 245, 0.5);
     margin: 10px 0 10px 0;
-    z-index: 10000;
+    z-index: 10000000;
+    overflow-y:visible;
 }
 
 #window-container{
     flex: 1;
     width: 100%;
     position: relative;
-    
 }
 
 .window {
@@ -64,6 +66,7 @@ body{
     position: absolute;
     resize: both;
     overflow: hidden;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .window-bar{
@@ -72,7 +75,7 @@ body{
     justify-content: end;
     
     width: 100%;
-    background-color: brown;
+    background-color:#333;
     
 }
 
@@ -92,7 +95,7 @@ body{
 
 .window-content {
     height: 100%;
-    background-color: rgb(255, 127, 80);
+    background-color: rgb(255, 255, 255);
     /*padding: 10px;*/
     padding: 10px;
     overflow-y: scroll;
@@ -109,6 +112,10 @@ body{
 }
 
 .bar-btn:hover{
+    background-color:  rgb(17, 65, 65);
+}
+
+.bar-btn{
     background-color:  rgb(17, 65, 65);
 }
 

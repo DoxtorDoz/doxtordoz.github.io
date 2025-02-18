@@ -40,16 +40,13 @@ export class UIManager{
 
 
     cargar_contenido(nombre_boton, funcionContenido, activa){
-        document.getElementById(nombre_boton).addEventListener("click", ()=> {
-            if( activa != this.ventanaActiva){
-                newWindow(activa,funcionContenido,activa);
-                const contenido = this.obtenerVentanaContenido();
-                //this.borrarContenidoVentana();
-                contenido.innerHTML = funcionContenido;
-                console.log(contenido);
+        const btn =  document.getElementById(nombre_boton);
+        btn.addEventListener("click", ()=> {
+            if( btn.getAttribute("active") != "true"){
+                newWindow(activa,funcionContenido,activa, nombre_boton);
                 console.log(activa);
                 this.ventanaActiva = activa;
-                document.getElementById("window-title").innerHTML = activa;
+                btn.setAttribute("active","true")
             }
         })
     }

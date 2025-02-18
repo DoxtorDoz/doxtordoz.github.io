@@ -1,5 +1,4 @@
-export function newWindow(vista, contenido, nombre){
-
+export function newWindow(vista, contenido, nombre, menuButton){
     /**
      * CREACION DE LA VENTANA
      */
@@ -79,13 +78,13 @@ export function newWindow(vista, contenido, nombre){
 
     closeButton.addEventListener("click", ()=> {
         window.remove();
+        document.getElementById(menuButton).setAttribute("active","false");
     });
 
     //DRAGABLE
     let offsetX = 0, offsetY = 0, isDragging = false;
 
     windowTitle.addEventListener("mousedown", (e) => {
-        console.log("hamza")
         isDragging = true;
         offsetX = e.clientX - window.offsetLeft;
         offsetY = e.clientY - window.offsetTop;
