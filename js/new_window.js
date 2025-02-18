@@ -1,3 +1,5 @@
+let zIndexCounter = 1;
+
 export function newWindow(vista, contenido, nombre, menuButton){
     /**
      * CREACION DE LA VENTANA
@@ -65,15 +67,25 @@ export function newWindow(vista, contenido, nombre, menuButton){
 
     var full_size = false; 
 
+    let oldX = 0, oldY = 0;
+
     resizeButton.addEventListener("click", ()=> {
-        if (!full_size){
-            window.style = "height:100%; width:100%"
-            console.log("agrandar")
-        }else{
-            window.style = "height:50%; width:50%"
-            console.log("resize")
+        traerAlFrente();
+        if (!full_size) {
+            oldX = window.style.left;
+            oldY = window.style.top;
+            console.log(oldX);
+            window.style.top = "0";
+            window.style.left = "0";
+            window.style.height = "100%";
+            window.style.width = "100%";
+        } else {
+            window.style.height = "50%";
+            window.style.width = "50%";
+            window.style.top = oldY; 
+            window.style.left = oldX; 
         }
-        full_size = !full_size
+        full_size = !full_size;
     });
 
     closeButton.addEventListener("click", ()=> {
@@ -82,9 +94,15 @@ export function newWindow(vista, contenido, nombre, menuButton){
     });
 
     //DRAGABLE
-    let offsetX = 0, offsetY = 0, isDragging = false;
+    let offsetX = 0, offsetY = 0, isDragging = false; 
+
+    function traerAlFrente() {
+        zIndexCounter++; 
+        window.style.zIndex = zIndexCounter; 
+    }
 
     windowTitle.addEventListener("mousedown", (e) => {
+        traerAlFrente()
         isDragging = true;
         offsetX = e.clientX - window.offsetLeft;
         offsetY = e.clientY - window.offsetTop;
@@ -104,6 +122,8 @@ export function newWindow(vista, contenido, nombre, menuButton){
         document.removeEventListener("mousemove", onMouseMove);
         document.removeEventListener("mouseup", onMouseUp);
     }
+
+    window.addEventListener("mousedown", (e) => traerAlFrente());
 
     document.getElementById('window-container').appendChild(window);
 }

@@ -71,9 +71,9 @@ body{
 
 .window-bar{
     display: flex;
-    align-items: end;
+    flex-direction: row;
+    align-items: center;
     justify-content: end;
-    
     width: 100%;
     background-color:#333;
     
@@ -82,7 +82,7 @@ body{
 .window-title{
     text-transform: capitalize;
     text-align: center;
-    width: 80%;
+    flex-grow: 1;
 }
 
 #window-bar-buttons{
@@ -90,7 +90,7 @@ body{
     align-items: end;
     justify-content: end;
     background-color: aqua;
-    width: 30%;
+    min-width: 100px;
 }
 
 .window-content {

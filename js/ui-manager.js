@@ -15,6 +15,8 @@ export class UIManager{
     init(){
         this.tipo = "inicio";
         this.cargarBotonesNavegacion();
+        setInterval(this.actualizarReloj.bind(this), 1000);
+        this.actualizarReloj();
     }
     
     cargarBotonesNavegacion(){
@@ -50,4 +52,16 @@ export class UIManager{
             }
         })
     }
+
+    actualizarReloj() {
+        const reloj = document.getElementById("clock");
+        const ahora = new Date();
+        const horas = ahora.getHours().toString().padStart(2, "0");
+        const minutos = ahora.getMinutes().toString().padStart(2, "0");
+        const segundos = ahora.getSeconds().toString().padStart(2, "0");
+    
+        reloj.textContent = `${horas}:${minutos}:${segundos}`;
+    }
+    
+    
 }
