@@ -1,0 +1,44 @@
+[
+    {
+        "id": "tiendaMoviles",
+        "nombre": "Tienda de móviles",
+        "descripcion": "Pagina web desarrollada para una tienda de móviles.",
+        "fecha": "2021",
+        "articulo": "project_tiendaMoviles.js"
+    },
+    {
+        "id": "periodicoDigital",
+        "nombre": "Periódigo Digital",
+        "descripcion": "Plataforma de noticias con Java y Vaadin.",
+        "fecha": "2024",
+        "articulo": "project_periodicoDigital.js"
+    },
+    {
+        "id": "appCientifica",
+        "nombre": "App Cientifica",
+        "descripcion": "Aplicación para iOS que simula ser una red social.",
+        "fecha": "2022",
+        "articulo": "project_appCientifica.js"
+    },
+    {
+        "id": "foodtrack",
+        "nombre": "FoodTrack",
+        "descripcion": "Aplicación web para el control de comidas.",
+        "fecha": "2023",
+        "articulo": "project_foodtrack.js"
+    },
+    {
+        "id": "apiary",
+        "nombre": "Apiary. Control de negocios",
+        "descripcion": "Aplicación multiplataforma para la gestión de negocios.",
+        "fecha": "2024",
+        "articulo": "project_apiary.js"
+    },
+    {
+        "id": "portfolio",
+        "nombre": "Portfolio",
+        "descripcion": "Este propio portfolio",
+        "fecha": "2025",
+        "articulo": "project_portfolio.js"
+    }
+]

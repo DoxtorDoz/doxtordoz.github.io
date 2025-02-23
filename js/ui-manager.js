@@ -9,25 +9,25 @@ export class UIManager{
 
     constructor(){
         this.ventanaActiva = "";
-        this.tipo = "";
+        //this.tipo = "";
     }
 
     init(){
-        this.tipo = "inicio";
+        //this.tipo = "inicio";
         this.cargarBotonesNavegacion();
         setInterval(this.actualizarReloj.bind(this), 1000);
         this.actualizarReloj();
     }
     
-    cargarBotonesNavegacion(){
+    async cargarBotonesNavegacion(){
         this.cargar_contenido("init_btn", getInicioContent(), "inicio")
-        this.cargar_contenido("proyectos_btn", getProyectosContent(), "proyectos")
+        this.cargar_contenido("proyectos_btn", await getProyectosContent(), "proyectos")
         this.cargar_contenido("conocimientos_btn", getConocimientosContent(), "conocimientos")
         this.cargar_contenido("experiencia_btn", getExperienciaContent(), "experiencia")
         this.cargar_contenido("contacto_btn", getContactoContent(), "contacto")
     }
 
-    obtenerVentanaContenido(){
+/*     obtenerVentanaContenido(){
         return document.getElementById('window-content-i');
     }
 
@@ -38,17 +38,17 @@ export class UIManager{
 
     cambiarPestana(){
         const barra = document.getElementById('contenedor-barra');
-    }
+    } */
 
 
     cargar_contenido(nombre_boton, funcionContenido, activa){
         const btn =  document.getElementById(nombre_boton);
         btn.addEventListener("click", ()=> {
             if( btn.getAttribute("active") != "true"){
-                newWindow(activa,funcionContenido,activa, nombre_boton);
                 console.log(activa);
                 this.ventanaActiva = activa;
                 btn.setAttribute("active","true")
+                newWindow(activa,funcionContenido,activa, nombre_boton);
             }
         })
     }

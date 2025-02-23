@@ -186,7 +186,19 @@ body{
     margin: 5px;
 }
 
-.proyectos-list{
+/*
+    PROYECTOS
+*/
+
+#proyectos-main{
+    display: block;
+}
+
+#proyecto-articulo{
+    display: none;
+}
+
+#proyectos-list{
     overflow: none;
 }
 

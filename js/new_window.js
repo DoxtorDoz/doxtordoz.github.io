@@ -51,7 +51,12 @@ export function newWindow(vista, contenido, nombre, menuButton){
     const windowContent = document.createElement('div');
     windowContent.setAttribute('id',`window-content-${vista}`);
     windowContent.setAttribute('class','window-content');
-    windowContent.innerHTML = contenido;
+
+    if(typeof contenido === "string"){
+        windowContent.innerHTML = contenido;
+    }else{
+        windowContent.appendChild(contenido);
+    }
 
     /**
      * MONTAJE FINAL

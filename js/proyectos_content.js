@@ -1,40 +1,61 @@
-export function getProyectosContent() {
+import {Proyecto} from './proyectos/proyecto.js';
+//TODO: ARREGLAR PARA QUE SOLO CARGUE EL CONTENIDO AL HACER CLICK (EVITAR CARGAS INNECESARIAS)
+export async function getProyectosContent() {
 
-    function proyectoItem(nombre, fecha, key){
-        return `
-        <div class = "proyecto-item" id = "${key}">
-            <div class = "nombre-proyecto">${nombre}</div>
-            <div class = "fecha-proyecto"> Fecha: ${fecha}</div>
-        </div>
-        `;
+    const proyectos = [];
+
+    const main = document.createElement("div");
+    main.id = proyectos-main;
+
+    const title = document.createElement("h2");
+    title.innerHTML = "Proyectos";
+
+    const exp = document.createTextNode("Estos son algunos de los proyectos que he desarrollado a lo largo del tiempo:");
+
+    main.appendChild(title);
+    main.appendChild(exp);
+
+    const listaProyectos = document.createElement("div");
+    listaProyectos.id = "proyectos-list";
+
+    async function getProyectosJSON(){
+        try{
+            const data =  await fetch("./js/proyectos/proyectos.json");
+            const jsonData = await data.json();
+            jsonData.forEach(art =>{
+                proyectos.push(Object.assign(new Proyecto(), art));
+            });
+        }catch(err){
+            console.error("Error al extraer los proyectos: ", err);
+        }
+
+        for(let i = 0 ; i < proyectos.length ; i++){
+            listaProyectos.appendChild(proyectos[i].getProyectoItem()); 
+        }
     }
 
-    function listaProyectosItem(){
-        let list = "";
-        itemsProyectos.forEach(item =>{
-            list += item;
-        });
-        return list;
+    //TODO
+    function prepararProyectos(){
     }
 
-    let itemsProyectos = [
-        proyectoItem("Página web para tienda de móviles", "2021", "tiendaMoviles"),
-        proyectoItem("Periodico digital", "2024", "periodicoDigital"),
-        proyectoItem("Aplicación iOS tipo red social", "2022", "appCientifica"),
-        proyectoItem("Aplicación web para el control de comidas", "2023", "foodtrack"),
-        proyectoItem("Aplicación multiplataforma para la gestión de negocios", "2024", "apiary"),
-        proyectoItem("Este portfolio", "2025", "portfolio"),
-    ];
+    await getProyectosJSON();
 
+    main.appendChild(listaProyectos);
 
+    const articuloProyecto = document.createElement("div");
+    articuloProyecto.id = "proyecto-articulo";
 
-    return `
-        <h2>Proyectos</h2>
-        <p>Estos son algunos de los proyectos que he desarrollado a lo largo del tiempo:</p>
-        <br>
-        <div class = "proyectos-list">
-            ${listaProyectosItem()}
-        </div>
-        <div class ="proyecto-details"></div>
-    `;
+    const divNav = document.createElement("div");
+
+    const backBtn = document.createElement("button");
+    backBtn.id ="volver-proyectos";
+    backBtn.innerHTML = "Volver"
+
+    divNav.appendChild(backBtn);
+
+    articuloProyecto.appendChild(divNav);
+
+    main.appendChild(articuloProyecto);
+
+    return main;
 }
