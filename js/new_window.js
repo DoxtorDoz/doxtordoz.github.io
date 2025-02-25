@@ -49,7 +49,8 @@ export function newWindow(vista, contenido, nombre, menuButton){
      */
 
     const divNav =document.createElement('div');
-    divNav.id ="navegacion";
+    divNav.id =`navegacion-${vista}`;
+    divNav.className="navegacion"
 
     const windowContent = document.createElement('div');
     windowContent.setAttribute('id',`window-content-${vista}`);

@@ -35,7 +35,7 @@ export class Proyecto{
     }
 
     async getProyectoArticulo(){
-        const divNav  = document.getElementById("navegacion");
+        const divNav  = document.getElementById("navegacion-proyectos");
 
         const titulo = document.createElement("b");
             titulo.innerText = `POS://proyectos/${this.id}`;
@@ -53,7 +53,7 @@ export class Proyecto{
         });
 
         divNav.appendChild(backBtn);
-        document.getElementById("navegacion").appendChild(titulo);
+        document.getElementById("navegacion-proyectos").appendChild(titulo);
 
         try{
             const articulo = await fetch(`./js/proyectos/html/${this.articulo}`);
