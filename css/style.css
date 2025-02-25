@@ -112,6 +112,8 @@ body{
 }
 
 .window {
+    display: flex;
+    flex-direction: column;
     min-width: 480px;
     min-height: 300px;
     float: left;
@@ -120,7 +122,7 @@ body{
     height: 480px;
     position: absolute;
     resize: both;
-    overflow: hidden;
+    overflow: auto;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -154,13 +156,13 @@ body{
 }
 
 
-
 .window-content {
+    flex-grow: 1;
     height: 100%;
     background-color: rgb(255, 255, 255);
     /*padding: 10px;*/
     padding: 10px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 #volver-proyectos{
@@ -237,8 +239,8 @@ body{
 
 #tecnologias-proyecto{
     display: flex;
-    
     flex-wrap: wrap;
+    background-color: aliceblue;
 }
 
 .tecnologia{
@@ -250,6 +252,11 @@ body{
     min-width: 200px;
     margin: 5px;
     position: relative;
+    background-color: #fff;
+}
+
+.tecnologia + .tecnologia{
+    flex-grow: 1;
 }
 
 .tecnologia img{

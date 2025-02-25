@@ -9,11 +9,9 @@ export class UIManager{
 
     constructor(){
         this.ventanaActiva = "";
-        //this.tipo = "";
     }
 
     init(){
-        //this.tipo = "inicio";
         this.cargarBotonesNavegacion();
         setInterval(this.actualizarReloj.bind(this), 1000);
         this.actualizarReloj();
@@ -26,19 +24,6 @@ export class UIManager{
         this.cargar_contenido("experiencia_btn", () => getExperienciaContent(), "experiencia")
         this.cargar_contenido("contacto_btn", () => getContactoContent(), "contacto")
     }
-
-/*     obtenerVentanaContenido(){
-        return document.getElementById('window-content-i');
-    }
-
-    borrarContenidoVentana(){
-        const contenido = this.obtenerVentanaContenido();
-        contenido.innerHTML = "r"
-    }
-
-    cambiarPestana(){
-        const barra = document.getElementById('contenedor-barra');
-    } */
 
 
     cargar_contenido(nombre_boton, funcionContenido, activa){
