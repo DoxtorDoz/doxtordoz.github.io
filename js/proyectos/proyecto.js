@@ -17,22 +17,28 @@ export class Proyecto{
             <div class = "fecha-proyecto">${this.fecha}</div>`
 
         item.addEventListener("click", async ()=>{
-            console.log(`Clickado en ${this.nombre}`);
-            const articulo = document.getElementById("proyecto-articulo");
+            //console.log(`Clickado en ${this.nombre}`);
 
-        let content = await this.getProyectoArticulo();
-        articulo.insertAdjacentHTML("beforeend",content);
-            
             document.getElementById("proyectos-header").style.display ="none";
             document.getElementById("proyectos-list").style.display = "none";
+
+            const articulo = document.getElementById("proyecto-articulo");
+
+            let content = await this.getProyectoArticulo();
+            articulo.insertAdjacentHTML("beforeend",content);
+            
+            
             articulo.style.display = "block";
+
         }); 
         return item;
     }
 
     async getProyectoArticulo(){
+        const divNav  = document.getElementById("navegacion");
 
-        const divNav = document.createElement("div");
+        const titulo = document.createElement("b");
+            titulo.innerText = `POS://proyectos/${this.id}`;
 
         const backBtn = document.createElement("button");
         backBtn.id ="volver-proyectos";
@@ -42,12 +48,12 @@ export class Proyecto{
             document.getElementById("proyectos-list").style.display = "block";
             document.getElementById("proyecto-articulo").style.display ="none";
             document.getElementById(`${this.id}-articulo`).remove();
-            divNav.remove();
+            backBtn.remove();
+            titulo.remove();
         });
 
         divNav.appendChild(backBtn);
-
-        document.getElementById("proyecto-articulo").appendChild(divNav);
+        document.getElementById("navegacion").appendChild(titulo);
 
         try{
             const articulo = await fetch(`./js/proyectos/html/${this.articulo}`);

@@ -23,6 +23,7 @@ export async function getProyectosContent() {
     const listaProyectos = document.createElement("div");
     listaProyectos.id = "proyectos-list";
 
+
     async function getProyectosJSON(){
         try{
             const data =  await fetch("./js/proyectos/proyectos.json");

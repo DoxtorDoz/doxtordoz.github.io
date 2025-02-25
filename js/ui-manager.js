@@ -20,11 +20,11 @@ export class UIManager{
     }
     
     async cargarBotonesNavegacion(){
-        this.cargar_contenido("init_btn", getInicioContent(), "inicio")
-        this.cargar_contenido("proyectos_btn", await getProyectosContent(), "proyectos")
-        this.cargar_contenido("conocimientos_btn", getConocimientosContent(), "conocimientos")
-        this.cargar_contenido("experiencia_btn", getExperienciaContent(), "experiencia")
-        this.cargar_contenido("contacto_btn", getContactoContent(), "contacto")
+        this.cargar_contenido("init_btn", () => getInicioContent(), "inicio")
+        this.cargar_contenido("proyectos_btn", () => getProyectosContent(), "proyectos")
+        this.cargar_contenido("conocimientos_btn", () => getConocimientosContent(), "conocimientos")
+        this.cargar_contenido("experiencia_btn", () => getExperienciaContent(), "experiencia")
+        this.cargar_contenido("contacto_btn", () => getContactoContent(), "contacto")
     }
 
 /*     obtenerVentanaContenido(){
@@ -43,12 +43,12 @@ export class UIManager{
 
     cargar_contenido(nombre_boton, funcionContenido, activa){
         const btn =  document.getElementById(nombre_boton);
-        btn.addEventListener("click", ()=> {
+        btn.addEventListener("click", async ()=> {
             if( btn.getAttribute("active") != "true"){
                 console.log(activa);
                 this.ventanaActiva = activa;
-                btn.setAttribute("active","true")
-                newWindow(activa,funcionContenido,activa, nombre_boton);
+                btn.setAttribute("active","true");
+                newWindow(activa,  await funcionContenido() ,activa, nombre_boton);
             }
         })
     }

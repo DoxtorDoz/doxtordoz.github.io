@@ -48,6 +48,9 @@ export function newWindow(vista, contenido, nombre, menuButton){
      * CONTENIDO DE LA VENTANA
      */
 
+    const divNav =document.createElement('div');
+    divNav.id ="navegacion";
+
     const windowContent = document.createElement('div');
     windowContent.setAttribute('id',`window-content-${vista}`);
     windowContent.setAttribute('class','window-content');
@@ -64,6 +67,7 @@ export function newWindow(vista, contenido, nombre, menuButton){
 
 
     window.appendChild(windowBar);
+    window.appendChild(divNav);
     window.appendChild(windowContent);
     traerAlFrente();
 
@@ -86,7 +90,6 @@ export function newWindow(vista, contenido, nombre, menuButton){
         if (!full_size) {
             oldX = window.style.left;
             oldY = window.style.top;
-            console.log(oldX);
             window.style.top = "0";
             window.style.left = "0";
             window.style.height = "100%";
@@ -101,6 +104,7 @@ export function newWindow(vista, contenido, nombre, menuButton){
     });
 
     closeButton.addEventListener("click", ()=> {
+        window.innerHTML = "";
         window.remove();
         document.getElementById(menuButton).setAttribute("active","false");
         move -=25;
