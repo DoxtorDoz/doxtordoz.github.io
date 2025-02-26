@@ -232,9 +232,9 @@ body{
     cursor: pointer;
 }
 
+
 .proyecto-item:hover{
     background-color: #ececec;
-    
 }
 
 #tecnologias-proyecto{
@@ -273,6 +273,3 @@ body{
     display: none;
     background-color: #fff;
 }
-
-
-

@@ -1,0 +1,34 @@
+.bg-css {
+    width: 256px; height: 256px;
+    background: url('/imgs/proyectos/periodicoDigital/tecnologias.png') -286px -10px;
+}
+
+.bg-html {
+    width: 256px; height: 256px;
+    background: url('/imgs/proyectos/periodicoDigital/tecnologias.png') -562px -10px;
+}
+
+.bg-javascript {
+    width: 256px; height: 256px;
+    background: url('/imgs/proyectos/periodicoDigital/tecnologias.png') -10px -338px;
+}
+
+.bg-mysql {
+    width: 256px; height: 160px;
+    background: url('/imgs/proyectos/periodicoDigital/tecnologias.png') -562px -338px;
+}
+
+.bg-phpMyAdmin {
+    width: 256px; height: 143px;
+    background: url('/imgs/proyectos/periodicoDigital/tecnologias.png') -10px -614px;
+}
+
+.bg-visual_paradigm {
+    width: 256px; height: 308px;
+    background: url('/imgs/proyectos/periodicoDigital/tecnologias.png') -10px -10px;
+}
+
+.bg-visual_studio_code {
+    width: 256px; height: 256px;
+    background: url('/imgs/proyectos/periodicoDigital/tecnologias.png') -286px -338px;
+}
