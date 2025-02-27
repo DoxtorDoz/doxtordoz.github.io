@@ -55,8 +55,9 @@ export class Proyecto{
         divNav.appendChild(backBtn);
         document.getElementById("navegacion-proyectos").appendChild(titulo);
 
+        //TODO: CONVERTIR ESTO EN FUNCION EXTERNA PARA LA CARGA DE CUALQUIER HTML
         try{
-            const articulo = await fetch(`./js/proyectos/html/${this.articulo}`);
+            const articulo = await fetch(`./html/proyectos/${this.articulo}`);
             const html = await articulo.text();
 
             const domp = new DOMParser();
