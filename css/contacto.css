@@ -8,10 +8,13 @@
     border-radius: 5px;
     margin: 5px;
     padding: 5px;
-    background-color: beige;
+    background-color: azure;
     min-width: 300px;
     flex-grow: 1;
+}
 
+.forma-contacto:hover{
+    background-color: rgb(192, 252, 252);
 }
 
 .imagen-contacto{
