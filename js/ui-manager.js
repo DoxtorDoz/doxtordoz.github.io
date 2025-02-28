@@ -17,6 +17,9 @@ export class UIManager{
         this.actualizarReloj();
     }
     
+    /*Esto deberia cambiarse también? No puedo depender de tener los botones y las funciones en
+    importadas de forma estatica... json con botones? o es demasiado rebuscado.
+    */
     async cargarBotonesNavegacion(){
         this.cargar_contenido("init_btn", () => getInicioContent(), "inicio")
         this.cargar_contenido("proyectos_btn", () => getProyectosContent(), "proyectos")

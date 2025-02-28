@@ -1,3 +1,4 @@
+import { loadHTML } from "/js/loadHTML.js";
 export class Proyecto{
     constructor(id, nombre, descripcion, fecha, articulo){
         this.id = id;
@@ -6,7 +7,6 @@ export class Proyecto{
         this.fecha = fecha;
         this.articulo = articulo;
     }
-
 
     async getProyectoItem(){
         const item = document.createElement("div");
@@ -17,8 +17,6 @@ export class Proyecto{
             <div class = "fecha-proyecto">${this.fecha}</div>`
 
         item.addEventListener("click", async ()=>{
-            //console.log(`Clickado en ${this.nombre}`);
-
             document.getElementById("proyectos-header").style.display ="none";
             document.getElementById("proyectos-list").style.display = "none";
 
@@ -27,10 +25,9 @@ export class Proyecto{
             let content = await this.getProyectoArticulo();
             articulo.insertAdjacentHTML("beforeend",content);
             
-            
             articulo.style.display = "block";
-
         }); 
+
         return item;
     }
 
@@ -38,7 +35,7 @@ export class Proyecto{
         const divNav  = document.getElementById("navegacion-proyectos");
 
         const titulo = document.createElement("b");
-            titulo.innerText = `POS://proyectos/${this.id}`;
+        titulo.innerText = `POS://proyectos/${this.id}`;
 
         const backBtn = document.createElement("button");
         backBtn.id ="volver-proyectos";
@@ -55,19 +52,6 @@ export class Proyecto{
         divNav.appendChild(backBtn);
         document.getElementById("navegacion-proyectos").appendChild(titulo);
 
-        //TODO: CONVERTIR ESTO EN FUNCION EXTERNA PARA LA CARGA DE CUALQUIER HTML
-        try{
-            const articulo = await fetch(`./html/proyectos/${this.articulo}`);
-            const html = await articulo.text();
-
-            const domp = new DOMParser();
-            let doc = domp.parseFromString(html, 'text/html').body.innerHTML;
-            let linea =  `<div class="articulo" id="${this.id}-articulo">${doc}</div>`;
-            return linea;
-
-        }catch(err){
-            console.error("Error en la carga del articulo del proyecto\n: ", err);
-            return `<p> Error en la carga :(`
-        }
+        return loadHTML(`./html/proyectos/${this.articulo}`, this.id, "articulo");
     }
 }

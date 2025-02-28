@@ -1,7 +1,6 @@
+import { loadHTML } from "./loadHTML.js";
+
 export function getContactoContent() {
 
-    return `
-        <h2>Contacto</h2>
-        <a>Ya lo rellenaré</a>
-    `;
+    return loadHTML("/html/contacto.html", "contacto",null);
 }
