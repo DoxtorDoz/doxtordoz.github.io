@@ -9,6 +9,18 @@ body{
     font-family: Ubuntu, monospace;
 }
 
+a:link{
+    color: black;
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+}
+
+a:hover{
+    color: rgb(235, 101, 54);
+}
 
 #top-bar{
     background-color: chartreuse;
@@ -78,6 +90,10 @@ body{
 }
 
 /*DESKTOP*/
+
+div{
+    text-align: justify;
+}
 
 #desktop-main{
     height: 100%;
@@ -187,6 +203,10 @@ body{
     height: 100px;
     margin: 5px;
     cursor: pointer;
+}
+
+.emoji-bb{
+    font-size: 30px;
 }
 
 .bar-btn:hover{

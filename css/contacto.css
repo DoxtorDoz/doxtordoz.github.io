@@ -14,13 +14,12 @@
 }
 
 .forma-contacto:hover{
-    background-color: rgb(192, 252, 252);
+    background-color: rgb(250, 212, 199);
 }
 
 .imagen-contacto{
     max-height: 64px;
     margin-right: 15px;
-
 }
 
 #mapa{
