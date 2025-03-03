@@ -16,6 +16,10 @@ export class UIManager{
         setInterval(this.actualizarReloj.bind(this), 1000);
         this.actualizarReloj();
     }
+
+    /**
+     * UIManager de la versión de escritorio
+     */
     
     /*Esto deberia cambiarse también? No puedo depender de tener los botones y las funciones en
     importadas de forma estatica... json con botones? o es demasiado rebuscado.
@@ -50,6 +54,12 @@ export class UIManager{
     
         reloj.textContent = `${horas}:${minutos}:${segundos}`;
     }
+    
+
+    /**
+     * UIManager de la versión movil
+     */
+
     
     
 }

@@ -12,7 +12,15 @@
     </head>
     <body>
         <div id="top-bar">
-            <div id="menu-btn"> ☰ </div>
+            <!--div id="menu-btn"> ☰ </div-->
+            <div id="menu-btn">
+                <div id="mbl-brg-btn">
+                <input type="checkbox" id="menuCheckbox" placeholder=".">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
             <div id="so-title" class="so-title-info">PortfoliOS :P
 
                 <span class="infotext">
@@ -41,7 +49,26 @@
         </div>
 
         <div id = "mobile-main">
-            La versión para resoluciones inferiores está en desarrollo :p
+            <ul id="mobile-menu">
+                <li>
+                    <button>Inicio</button>
+                </li>
+                <li>
+                    <button>Proyectos</button>
+                </li>
+                <li>
+                    <button>Conocimientos</button>
+                </li>
+                <li>
+                    <button>Experiencia</button>
+                </li>
+                <li>
+                    <button>Contacto</button>
+                </li>
+            </ul>
+            <div id="contenido-movil">
+                La versión para resoluciones inferiores está en desarrollo :p
+            </div>
         </div>
 
         <script type ="module" src="js/main.js?v=2" defer></script>

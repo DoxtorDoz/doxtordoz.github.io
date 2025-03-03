@@ -69,10 +69,16 @@ a:hover{
     color: aliceblue;
 }
 
+#mbl-brg-btn{
+    display: none;
+}
+
 @media all and (max-width: 768px){
     #desktop-main{
         display: block !important;
     }
+
+
 
     #mobile-main{
         display: none !important;
@@ -84,8 +90,16 @@ a:hover{
         display: none !important;
     }
 
+    #mbl-brg-btn{
+        display: block !important;
+    }
+
     #mobile-main{
         display: block !important;
+    }
+
+    #top-bar{
+        height: 40px;
     }
 }
 
@@ -292,6 +306,49 @@ div{
 /*MOBILE*/
 
 #mobile-main{
+    width: 100%;
+    height: 100%;
     display: none;
     background-color: #fff;
+}
+
+#contenido-movil{
+    width: 100%;
+    height: 100%;
+    background-color: #c0be58;
+}
+
+#mobile-menu{
+    display: none;
+    width: 80%;
+    height: 100%;
+    position: absolute;
+
+    cursor: pointer;
+    z-index: 2;
+
+    -webkit-touch-callout: none;
+}
+
+#menu-btn input{
+    display: block;
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    opacity: 0;
+    z-index: 2;
+}
+
+#menu-btn span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: red;
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    z-index: 1;
 }
