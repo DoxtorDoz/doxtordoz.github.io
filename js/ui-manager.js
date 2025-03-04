@@ -4,6 +4,7 @@ import { getConocimientosContent } from "./conocimientos_content.js";
 import { getExperienciaContent } from "./experiencia_content.js";
 import { getContactoContent } from "./contacto_content.js";
 import { newWindow } from "./new_window.js";
+import { mobile_manager } from "./mobile_manager.js";
 
 export class UIManager{
 
@@ -12,9 +13,11 @@ export class UIManager{
     }
 
     init(){
-        this.cargarBotonesNavegacion();
+        this.cargarBotonesNavegacionEscritorio();
+        this.cargarBotonesNavegacionMobile();
         setInterval(this.actualizarReloj.bind(this), 1000);
         this.actualizarReloj();
+        this.init_inicioMobile();
     }
 
     /**
@@ -24,18 +27,18 @@ export class UIManager{
     /*Esto deberia cambiarse también? No puedo depender de tener los botones y las funciones en
     importadas de forma estatica... json con botones? o es demasiado rebuscado.
     */
-    async cargarBotonesNavegacion(){
-        this.cargar_contenido("init_btn", () => getInicioContent(), "inicio")
-        this.cargar_contenido("proyectos_btn", () => getProyectosContent(), "proyectos")
-        this.cargar_contenido("conocimientos_btn", () => getConocimientosContent(), "conocimientos")
-        this.cargar_contenido("experiencia_btn", () => getExperienciaContent(), "experiencia")
-        this.cargar_contenido("contacto_btn", () => getContactoContent(), "contacto")
+    async cargarBotonesNavegacionEscritorio(){
+        this.cargar_contenidoEscritorio("init_btn", () => getInicioContent(), "inicio")
+        this.cargar_contenidoEscritorio("proyectos_btn", () => getProyectosContent(), "proyectos")
+        this.cargar_contenidoEscritorio("conocimientos_btn", () => getConocimientosContent(), "conocimientos")
+        this.cargar_contenidoEscritorio("experiencia_btn", () => getExperienciaContent(), "experiencia")
+        this.cargar_contenidoEscritorio("contacto_btn", () => getContactoContent(), "contacto")
     }
 
 
-    cargar_contenido(nombre_boton, funcionContenido, activa){
+    cargar_contenidoEscritorio(nombre_boton, funcionContenido, activa){
         const btn =  document.getElementById(nombre_boton);
-        btn.addEventListener("click", async ()=> {
+        btn.addEventListener("click", async () => {
             if( btn.getAttribute("active") != "true"){
                 console.log(activa);
                 this.ventanaActiva = activa;
@@ -60,6 +63,25 @@ export class UIManager{
      * UIManager de la versión movil
      */
 
+    async cargarBotonesNavegacionMobile(){
+        this.cargarContenidoMobile("mb-bt-inicio", () => getInicioContent());
+        this.cargarContenidoMobile("mb-bt-proyectos", () => getProyectosContent());
+        this.cargarContenidoMobile("mb-bt-conocimientos", () => getConocimientosContent());
+        this.cargarContenidoMobile("mb-bt-experiencia", () => getExperienciaContent());
+        this.cargarContenidoMobile("mb-bt-contacto", () => getContactoContent());
+    }
     
-    
+    cargarContenidoMobile(nombre_boton, funcionContenido){
+        const nav = document.getElementById(nombre_boton);
+        const windowContent = document.getElementById("contenido-movil");
+        nav.addEventListener("click", async () => {
+            windowContent.innerHTML="";
+            mobile_manager(windowContent, await funcionContenido());            console.log("hola");
+        });
+    }
+
+    async init_inicioMobile(){
+        const windowContent = document.getElementById("contenido-movil");
+        mobile_manager(windowContent, await getInicioContent());   
+    }
 }

@@ -2,6 +2,8 @@ import {Proyecto} from './proyectos/proyecto.js';
 //TODO: ARREGLAR PARA QUE SOLO CARGUE EL CONTENIDO AL HACER CLICK (EVITAR CARGAS INNECESARIAS)
 export async function getProyectosContent() {
 
+    //TODO: CORREGIR PARA AÑADIR LOS PROYECTOS EN MOVIL CORRECTAMENTE
+
     const proyectos = [];
 
     //este creo que no hará falta :p
