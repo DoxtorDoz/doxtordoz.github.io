@@ -7,6 +7,7 @@ body{
     height: 100vh;
     /*font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
     font-family: Ubuntu, monospace;
+    overflow: hidden;
 }
 
 a:link{
@@ -77,8 +78,6 @@ a:hover{
     #desktop-main{
         display: block !important;
     }
-
-
 
     #mobile-main{
         display: none !important;
@@ -191,7 +190,7 @@ div{
     height: 100%;
     background-color: rgb(255, 255, 255);
     /*padding: 10px;*/
-    padding: 10px;
+    padding: 30px;
     overflow-y: auto;
 }
 
@@ -317,7 +316,9 @@ div{
     width: 100%;
     height: 100%;
     background-color: #ffffff;
-    overflow-y: scroll;
+    overflow-y: auto;
+    padding: 30px;
+    box-sizing: border-box;
 }
 
 #menu-btn input{
@@ -377,7 +378,7 @@ div{
     width: 300px;
     height: 100%;
     position: fixed;
-    background-color: #232323;
+    background-color: #333;
 
     /* z-index: 2; */
 
@@ -398,22 +399,22 @@ div{
 }
 
 #mobile-menu li:nth-child(odd){
-    background-color: red;
+    background-color: rgb(187, 148, 169);
     transform: rotate(15deg) translate(100px, 50px) ;
 }
 
 #mobile-menu li:nth-child(odd):hover{
-    background-color: rgb(114, 35, 35);
+    background-color: rgb(207, 180, 194);
 }
 
 #mobile-menu li:nth-child(even){
-    background-color: blue;
+    background-color: rgb(244, 170, 144);
     text-align: end;
     transform: rotate(15deg) translate(-100px, 50px) ;
 }
 
 #mobile-menu li:nth-child(even):hover{
-    background-color: rgb(35, 85, 114);
+    background-color: rgb(248, 204, 188);
     
 }
 
@@ -421,13 +422,13 @@ div{
 #mobile-menu label{
     text-decoration: none;
     color: #232323;
-    margin-left: 30px;
+   /*  margin-left: 30px; */
     transition: color 0.3s ease;
-    margin: 5px;
+    margin: 30px;
 }
 
 #mobile-menu label:hover{
-    color: tomato;
+    color: rgb(250, 96, 68);
 }
 
 #menu-btn input:checked ~ul{

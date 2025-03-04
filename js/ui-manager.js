@@ -75,6 +75,7 @@ export class UIManager{
         const nav = document.getElementById(nombre_boton);
         const windowContent = document.getElementById("contenido-movil");
         nav.addEventListener("click", async () => {
+            document.getElementById("navegacion-proyectos").innerHTML="";
             windowContent.innerHTML="";
             mobile_manager(windowContent, await funcionContenido());            console.log("hola");
         });
