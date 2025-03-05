@@ -210,6 +210,7 @@ div{
 
 .bar-btn{
     background-color: rgb(9, 49, 49);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     color: aliceblue;
     border-radius: 5px;
     width: 100px;
@@ -224,10 +225,12 @@ div{
 
 .bar-btn:hover{
     background-color:  rgb(17, 65, 65);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .bar-btn[active = "true"]{
     background-color:  rgb(23, 90, 90);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .w-button{
@@ -259,34 +262,37 @@ div{
 }
 
 .proyecto-item{
-    margin: 5px;
-    border-style: solid;
-    border-width: 1px;
+    background-color: rgb(255, 255, 255);
+    margin: 12px;
+    border-radius: 5px;
     padding: 5px;
     cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 
 .proyecto-item:hover{
     background-color: #ececec;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 #tecnologias-proyecto{
     display: flex;
     flex-wrap: wrap;
     background-color: aliceblue;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .tecnologia{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-style: solid;
-    border-width: 1px;
+    border-radius: 10px;
     min-width: 200px;
     margin: 5px;
     position: relative;
     background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .tecnologia + .tecnologia{
@@ -294,9 +300,9 @@ div{
 }
 
 .tecnologia img{
-    height: 100px;
-    max-height: 100px;
-    max-width: 150px;
+    height: 96px;
+   /*  max-height: 100px;
+    max-width: 150px; */
     margin: 5px;
 }
 
