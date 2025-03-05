@@ -30,7 +30,7 @@ export class UIManager{
     async cargarBotonesNavegacionEscritorio(){
         this.cargar_contenidoEscritorio("init_btn", () => getInicioContent(), "inicio")
         this.cargar_contenidoEscritorio("proyectos_btn", () => getProyectosContent(), "proyectos")
-        this.cargar_contenidoEscritorio("conocimientos_btn", () => getConocimientosContent(), "conocimientos")
+        this.cargar_contenidoEscritorio("conocimientos_btn", () => getConocimientosContent(), "tecnologias")
         this.cargar_contenidoEscritorio("experiencia_btn", () => getExperienciaContent(), "experiencia")
         this.cargar_contenidoEscritorio("contacto_btn", () => getContactoContent(), "contacto")
     }
