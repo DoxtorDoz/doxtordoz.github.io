@@ -9,6 +9,7 @@
 }
 
 .elemento-stack{
+    min-width: 192px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,9 +20,23 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.div-img-t-stack{
+    margin: 5px;
+}
 
 
 .img-stack{
     width: 96px;
+    height: 96px;
     margin: 5px;
+}
+
+.nombre-t-stack{
+    margin: 5px;
+}
+
+.nombre-t-stack span{
+    
+    font-weight: bold;
+
 }
