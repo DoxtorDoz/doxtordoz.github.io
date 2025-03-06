@@ -5,7 +5,8 @@
     justify-content: space-evenly;
     width: 100%;
     background-color: rgb(194, 243, 227);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
 
 .elemento-stack{
@@ -15,15 +16,12 @@
     align-items: center;
     flex-grow: 1;
     border-radius: 10px;
-    background-color: whitesmoke;
+    background-color: white;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     margin: 5px;
- 
+
 }
 
-.elemento-stack > *{
-    
-}
 
 .div-img-t-stack{
     margin: 5px;
