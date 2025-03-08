@@ -13,8 +13,14 @@ export class Proyecto{
         item.classList = "proyecto-item";
         item.id = `${this.id}-item`;
 
-        item.innerHTML = `<div class ="nombre-proyecto">${this.nombre}</div>
-            <div class = "fecha-proyecto">${this.fecha}</div>`
+        item.innerHTML = `<div class="item-top">
+                <div class ="nombre-proyecto">${this.nombre}</div>
+                <div class = "fecha-proyecto">${this.fecha}</div>
+            </div>
+        <div class="item-bottom">
+            <div class ="desc-proyecto">${this.descripcion}</div>
+        </div>
+            `
 
         item.addEventListener("click", async ()=>{
             document.getElementById("proyectos-header").style.display ="none";

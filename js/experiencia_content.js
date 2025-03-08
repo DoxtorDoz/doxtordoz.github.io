@@ -1,11 +1,6 @@
+import { loadHTML } from "./loadHTML.js";
+
 export function getExperienciaContent() {
 
-    return `
-        <h1>Experiencia</h1>
-        <span>
-            Actualmente carezco de experiencia laboral, por lo que este apartado queda sin información relevante por el momento.
-            <br><br>
-            Si representas a una empresa, <a href="https://www.linkedin.com/in/antogoncap/">puedes ayudarme a comenzar este apartado ;)</a>
-        </span>
-    `;
+    return loadHTML("/html/experiencia.html", "inicio",null);
 }
