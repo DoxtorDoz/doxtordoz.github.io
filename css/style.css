@@ -1,5 +1,4 @@
-
-body{
+body {
     display: flex;
     flex-direction: column;
     background-image: url(/imgs/wllppr.jpeg);
@@ -10,20 +9,20 @@ body{
     overflow: hidden;
 }
 
-a:link{
+a:link {
     color: black;
     text-decoration: none;
 }
 
-a:visited{
+a:visited {
     color: black;
 }
 
-a:hover{
+a:hover {
     color: rgb(235, 101, 54);
 }
 
-#top-bar{
+#top-bar {
     background-color: chartreuse;
     width: 100%;
     height: 25px;
@@ -37,13 +36,13 @@ a:hover{
     user-select: none;
 }
 
-.so-title-info{
+.so-title-info {
     position: relative;
     display: inline-block;
-    
+
 }
 
-.infotext{
+.infotext {
     visibility: hidden;
     width: 300px;
     background-color: #333;
@@ -64,51 +63,63 @@ a:hover{
     visibility: visible;
 }
 
-#menu-btn, #so-title, #clock, .window-title{
+#menu-btn,
+#so-title,
+#clock,
+.window-title {
     margin-left: 10px;
     margin-right: 10px;
     color: aliceblue;
 }
 
-#mbl-brg-btn{
+#mbl-brg-btn {
     display: none;
 }
 
-@media all and (max-width: 768px){
-    #desktop-main{
+@media all and (max-width: 768px) {
+    #desktop-main {
         display: block !important;
     }
 
-    #mobile-main{
+    #mobile-main {
+        display: none !important;
+    }
+
+    #aviso{
         display: none !important;
     }
 }
 
-@media all and (max-width: 767px){
-    #desktop-main{
+@media all and (max-width: 767px) {
+    #desktop-main {
         display: none !important;
     }
 
-    #mbl-brg-btn{
+    #mbl-brg-btn {
         display: block !important;
     }
 
-    #mobile-main{
+    #mobile-main {
         display: block !important;
     }
 
-    #top-bar{
+    #top-bar {
         height: 40px;
+    }
+
+    #aviso{
+        display: block !important;
     }
 }
 
 /*DESKTOP*/
 
-div{
+div {
+    /* text-align: justify; */
     text-align: justify;
 }
 
-#desktop-main{
+#desktop-main {
     height: 100%;
     width: 100%;
     display: flex;
@@ -120,7 +131,7 @@ div{
 
 
 
-#left-bar{
+#left-bar {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,12 +140,12 @@ div{
     background-color: rgb(224, 201, 245, 0.5);
     margin: 10px 0 10px 0;
     z-index: 1000000;
-    overflow-y:visible;
+    overflow-y: visible;
     -webkit-user-select: none;
     user-select: none;
 }
 
-#window-container{
+#window-container {
     flex: 1;
     width: 100%;
     position: relative;
@@ -155,28 +166,28 @@ div{
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.window-bar{
+.window-bar {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: end;
     width: 100%;
-    background-color:#333;
+    background-color: #333;
     -webkit-user-select: none;
     user-select: none;
 }
 
-.window-bar:hover{
-    background-color:#444444;
+.window-bar:hover {
+    background-color: #444444;
 }
 
-.window-title{
+.window-title {
     text-transform: capitalize;
     text-align: center;
     flex-grow: 1;
 }
 
-#window-bar-buttons{
+#window-bar-buttons {
     display: flex;
     align-items: end;
     justify-content: end;
@@ -194,7 +205,7 @@ div{
     overflow-y: auto;
 }
 
-#volver-proyectos{
+#volver-proyectos {
     margin: 5px;
     border: none;
     cursor: pointer;
@@ -204,12 +215,12 @@ div{
     height: 20px;
 }
 
-#volver-proyectos:hover{
+#volver-proyectos:hover {
     background-color: #4b4b4b;
 }
 
-.bar-btn{
-    background-color: rgb(9, 49, 49);
+.bar-btn {
+    background-color: #333;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     color: aliceblue;
     border-radius: 5px;
@@ -219,30 +230,30 @@ div{
     cursor: pointer;
 }
 
-.emoji-bb{
+.emoji-bb {
     font-size: 30px;
 }
 
-.bar-btn:hover{
-    background-color:  rgb(17, 65, 65);
+.bar-btn:hover {
+    background-color: #4e4e4e;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     transform: translate(10px, 0px);
 }
 
-.bar-btn[active = "true"]{
-    background-color:  rgb(23, 90, 90);
+.bar-btn[active="true"] {
+    background-color: #414141;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     transform: translate(10px, 0px);
 }
 
-.w-button{
+.w-button {
     border-radius: 10px;
     cursor: pointer;
     border: none;
     margin: 5px;
 }
 
-#close-w-btn:hover{
+#close-w-btn:hover {
     color: white;
     background-color: rgb(241, 77, 77);
 }
@@ -251,19 +262,21 @@ div{
     PROYECTOS
 */
 
-#proyectos-main{
+#proyectos-main {
     display: block;
+    width: 85%;
+    margin: auto;
 }
 
-#proyecto-articulo{
+#proyecto-articulo {
     display: none;
 }
 
-#proyectos-list{
+#proyectos-list {
     overflow: none;
 }
 
-.proyecto-item{
+.proyecto-item {
     background-color: rgb(255, 255, 255);
     margin: 12px;
     border-radius: 5px;
@@ -271,7 +284,7 @@ div{
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.item-top{
+.item-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -280,29 +293,32 @@ div{
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.nombre-proyecto{
+.nombre-proyecto {
     margin-left: 5px;
 }
 
-.item-bottom{
+.item-bottom {
     padding: 10px;
 }
 
 
-.proyecto-item:hover{
+.proyecto-item:hover {
     background-color: #ececec;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     transform: translate(10px, 0px);
 }
 
-#tecnologias-proyecto{
+#tecnologias-proyecto {
     display: flex;
     flex-wrap: wrap;
-    background-color: aliceblue;
+    background: #D43644;
+    background: linear-gradient(0deg, rgba(212, 54, 68, 0.5) 0%, rgba(183, 35, 116, 0.5) 50%, rgba(129, 36, 111, 0.5) 100%);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
-.tecnologia{
+.tecnologia {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -314,13 +330,13 @@ div{
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.tecnologia + .tecnologia{
+.tecnologia+.tecnologia {
     flex-grow: 1;
 }
 
-.tecnologia img{
+.tecnologia img {
     height: 96px;
-   /*  max-height: 100px;
+    /*  max-height: 100px;
     max-width: 150px; */
     margin: 5px;
 }
@@ -329,36 +345,38 @@ div{
 
 /*MOBILE*/
 
-#mobile-main{
+#mobile-main {
     width: 100%;
     height: 100%;
     display: none;
     background-color: #fff;
     overflow-y: hidden;
+    padding-bottom: 15px;
 }
 
-#contenido-movil{
+#contenido-movil {
     width: 100%;
     height: 100%;
     background-color: #ffffff;
     overflow-y: auto;
     padding: 30px;
     box-sizing: border-box;
+    
 }
 
-#menu-btn input{
+#menu-btn input {
     display: block;
     width: 40px;
     height: 30px;
     position: absolute;
     top: -1px;
     left: 3px;
-    opacity: 0; 
+    opacity: 0;
     z-index: 2;
     cursor: pointer;
 }
 
-#menu-btn span{
+#menu-btn span {
     display: block;
     width: 34px;
     height: 4px;
@@ -369,36 +387,36 @@ div{
     transform-origin: 4px 0px;
     z-index: 1;
 
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), 
-        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), 
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
         opacity 0.55s ease;
 }
 
-#menu-btn span:first-child{
+#menu-btn span:first-child {
     transform-origin: 0% 0%;
 }
 
 
-#menu-btn span:nth-last-child(2){
+#menu-btn span:nth-last-child(2) {
     transform-origin: 0% 100%;
 }
 
-#menu-btn input:checked ~ span{
+#menu-btn input:checked~span {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
     /* background: #232323; */
 }
 
-#menu-btn input:checked ~ span:nth-last-child(3){
+#menu-btn input:checked~span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menu-btn input:checked ~ span:nth-last-child(2){
+#menu-btn input:checked~span:nth-last-child(2) {
     transform: rotate(-45deg) translate(0, -1px);
 }
 
-#mobile-menu{
+#mobile-menu {
     display: block;
     width: 300px;
     height: 100%;
@@ -411,11 +429,11 @@ div{
     transform-origin: 0% 0%;
     transform: translate(-110%, 0);
 
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     overflow: hidden;
 }
 
-#mobile-menu li{
+#mobile-menu li {
     padding: 10px 0;
     font-size: 22px;
     cursor: pointer;
@@ -423,41 +441,40 @@ div{
     transition: height 3s;
 }
 
-#mobile-menu li:nth-child(odd){
+#mobile-menu li:nth-child(odd) {
     background-color: rgb(187, 148, 169);
-    transform: rotate(15deg) translate(100px, 50px) ;
+    transform: rotate(15deg) translate(100px, 50px);
 }
 
-#mobile-menu li:nth-child(odd):hover{
+#mobile-menu li:nth-child(odd):hover {
     background-color: rgb(207, 180, 194);
 }
 
-#mobile-menu li:nth-child(even){
+#mobile-menu li:nth-child(even) {
     background-color: rgb(244, 170, 144);
     text-align: end;
-    transform: rotate(15deg) translate(-100px, 50px) ;
+    transform: rotate(15deg) translate(-100px, 50px);
 }
 
-#mobile-menu li:nth-child(even):hover{
+#mobile-menu li:nth-child(even):hover {
     background-color: rgb(248, 204, 188);
-    
+
 }
 
 
-#mobile-menu label{
+#mobile-menu label {
     text-decoration: none;
     color: #232323;
-   /*  margin-left: 30px; */
+    /*  margin-left: 30px; */
     transition: color 0.3s ease;
     margin: 30px;
     cursor: pointer;
 }
 
-#mobile-menu label:hover{
+#mobile-menu label:hover {
     color: rgb(250, 96, 68);
 }
 
-#menu-btn input:checked ~ul{
+#menu-btn input:checked~ul {
     transform: none;
 }
-
