@@ -12,33 +12,7 @@
     </head>
     <body>
         <div id="top-bar">
-            <!--div id="menu-btn"> ☰ </div-->
-            <div id="menu-btn">
-                <div id="mbl-brg-btn">
-                <input type="checkbox" id="menuCheckbox">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-
-                    <ul id="mobile-menu">
-                        <li>
-                            <label for="menuCheckbox" id="mb-bt-inicio">Inicio</label>
-                        </li>
-                        <li>
-                            <label for="menuCheckbox" id="mb-bt-proyectos">Proyectos</label>
-                        </li>
-                        <li>
-                            <label for="menuCheckbox" id="mb-bt-conocimientos">Tecnologías</label>
-                        </li>
-                        <li>
-                            <label for="menuCheckbox" id="mb-bt-experiencia">Experiencia</label>
-                        </li>
-                        <li>
-                            <label for="menuCheckbox" id="mb-bt-contacto">Contacto</label>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <div></div>
             <div id="so-title" class="so-title-info">PortfoliOS
                 <!--span id="v-desktop">🖥️</span>
                 <span id="v-phone">📱</span-->
@@ -68,8 +42,17 @@
         </div>
 
         <div id = "mobile-main">
-            <div id="navegacion-proyectos"></div>
-            <div id="contenido-movil"></div>
+            <div id="mobile-root">
+                <div id="navegacion-proyectos" style="display: none;"></div>
+                <div id="contenido-movil"></div>
+            </div>
+            <div id="bottom-bar">
+                <button class="mobile-bar-btn" id="mb-bt-inicio", active = true> <span class="emoji-bb">🏠</span> <br> Inicio</button>
+                <button class="mobile-bar-btn" id="mb-bt-proyectos", active = false> <span class="emoji-bb">💻</span> <br> Proyectos</button>
+                <button class="mobile-bar-btn" id="mb-bt-conocimientos", active = false> <span class="emoji-bb">📚</span> <br>Tecnologías</button>
+                <button class="mobile-bar-btn" id="mb-bt-experiencia", active = false> <span class="emoji-bb">🤓</span> <br>Experiencia</button>
+                <button class="mobile-bar-btn" id="mb-bt-contacto", active = false> <span class="emoji-bb">💬</span> <br> Contacto</button>
+            </div>
         </div>
 
         <script type ="module" src="js/main.js?v=2" defer></script>

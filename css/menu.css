@@ -1,0 +1,148 @@
+/* Esto ya no se usa pero no quiero perderlo :p 
+
+
+        <div id="top-bar">
+            <!--div id="menu-btn"> ☰ </div-->
+            <div id="menu-btn">
+                <!--div id="mbl-brg-btn">
+                <input type="checkbox" id="menuCheckbox">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <ul id="mobile-menu">
+                        <li>
+                            <label for="menuCheckbox" id="mb-bt-inicio">Inicio</label>
+                        </li>
+                        <li>
+                            <label for="menuCheckbox" id="mb-bt-proyectos">Proyectos</label>
+                        </li>
+                        <li>
+                            <label for="menuCheckbox" id="mb-bt-conocimientos">Tecnologías</label>
+                        </li>
+                        <li>
+                            <label for="menuCheckbox" id="mb-bt-experiencia">Experiencia</label>
+                        </li>
+                        <li>
+                            <label for="menuCheckbox" id="mb-bt-contacto">Contacto</label>
+                        </li>
+                    </ul>
+                </div-->
+
+
+*/
+
+#menu-btn input {
+    display: block;
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    top: -1px;
+    left: 3px;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#menu-btn span {
+    display: block;
+    width: 34px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: rgb(255, 255, 255);
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    z-index: 1;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+}
+
+#menu-btn span:first-child {
+    transform-origin: 0% 0%;
+}
+
+
+#menu-btn span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#menu-btn input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    /* background: #232323; */
+}
+
+#menu-btn input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menu-btn input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#mobile-menu {
+    display: block;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    background-color: #333;
+
+    /* z-index: 2; */
+
+    list-style-type: none;
+    transform-origin: 0% 0%;
+    transform: translate(-110%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    overflow: hidden;
+}
+
+#mobile-menu li {
+    padding: 10px 0;
+    font-size: 22px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: height 3s;
+}
+
+#mobile-menu li:nth-child(odd) {
+    background-color: rgb(187, 148, 169);
+    transform: rotate(15deg) translate(100px, 50px);
+}
+
+#mobile-menu li:nth-child(odd):hover {
+    background-color: rgb(207, 180, 194);
+}
+
+#mobile-menu li:nth-child(even) {
+    background-color: rgb(244, 170, 144);
+    text-align: end;
+    transform: rotate(15deg) translate(-100px, 50px);
+}
+
+#mobile-menu li:nth-child(even):hover {
+    background-color: rgb(248, 204, 188);
+
+}
+
+
+#mobile-menu label {
+    text-decoration: none;
+    color: #232323;
+    /*  margin-left: 30px; */
+    transition: color 0.3s ease;
+    margin: 30px;
+    cursor: pointer;
+}
+
+#mobile-menu label:hover {
+    color: rgb(250, 96, 68);
+}
+
+#menu-btn input:checked~ul {
+    transform: none;
+}

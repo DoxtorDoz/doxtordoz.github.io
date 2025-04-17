@@ -74,10 +74,34 @@ export class UIManager{
     cargarContenidoMobile(nombre_boton, funcionContenido){
         const nav = document.getElementById(nombre_boton);
         const windowContent = document.getElementById("contenido-movil");
+        const navPro = document.getElementById("navegacion-proyectos")
         nav.addEventListener("click", async () => {
-            document.getElementById("navegacion-proyectos").innerHTML="";
-            windowContent.innerHTML="";
-            mobile_manager(windowContent, await funcionContenido());            console.log("hola");
+            if(navPro){
+                if(document.getElementById('mb-bt-proyectos').getAttribute("active").toString() == "false"){
+                    navPro.innerHTML="";
+                }
+                
+            }
+            const botones = document.getElementsByClassName("mobile-bar-btn")
+            for(let but of botones){
+                if(but.id !== nombre_boton){
+                    but.setAttribute("active","false")
+                }
+            }
+
+            if(nombre_boton == 'mb-bt-proyectos'){
+                navPro.style="display: block;"
+            }else{
+                navPro.style = "display: none"
+            }
+
+            if( nav.getAttribute("active") != "true"){
+                navPro.innerHTML="";
+                nav.setAttribute("active","true");
+                windowContent.innerHTML="";
+                mobile_manager(windowContent, await funcionContenido());
+            }
+
         });
     }
 
